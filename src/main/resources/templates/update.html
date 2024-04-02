@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+</head>
+<body>
+
+
+<form action="#" th:action="@{'/update/' + ${user.id}}" method="post" th:object="${user}">
+    <input type="hidden" th:field="*{id}" />
+    <p>Name: <input type="text" th:field="*{name}" /></p>
+    <p>Last Name: <input type="text" th:field="*{lastname}" /></p>
+    <p>Age: <input type="number" th:field="*{age}" /></p>
+    <p><button type="submit">Update</button></p>
+</form>
+
+<form action="#" th:action="@{'/delete/' + ${user.id}}" method="post">
+<!--    <input type="hidden" name="_method" value="DELETE"/>-->
+    <input type="hidden" th:field="*{id}" />
+    <p><button type="submit">Delete</button></p>
+</form>
+
+</body>
+</html>

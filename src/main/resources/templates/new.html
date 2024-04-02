@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New User</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/}" th:object="${user}">
+    <input type="hidden" th:field="*{id}"/> <!-- Добавляем скрытое поле для передачи ID пользователя -->
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" th:field="*{name}" required>
+
+    <br>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" th:field="*{lastname}" required>
+
+    <br>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" th:field="*{age}" required><br>
+
+    <input type="submit" value="Create"/>
+</form>
+
+</body>
+</html>
